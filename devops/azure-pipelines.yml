@@ -32,14 +32,6 @@ stages:
               yarn build
             displayName: 'Build the project'
 
-          - script: |
-              pwd
-            displayName: 'Check default location'
-
-          - script: |
-              dir
-            displayName: 'Check default location'
-
           - task: CopyFiles@2
             inputs:
               sourceFolder: 'build'
