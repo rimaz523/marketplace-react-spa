@@ -1,0 +1,49 @@
+trigger:
+  branches:
+    include:
+      - master
+
+variables:
+  - template: variables/build.yml
+
+stages:
+  - stage: 'Build'
+    displayName: 'Build the front end react web application'
+    jobs:
+      - job: 'Build'
+        displayName: 'Build job'
+        pool:
+          vmImage: '$(buildVmImage)'
+
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Install Node.js'
+
+          - script: 'npm install --global yarn'
+            displayName: 'Install Yarn'
+
+          - script: |
+              yarn install
+              yarn build
+            displayName: 'yarn install and build'
+          - task: CopyFiles@2
+            inputs:
+              sourceFolder: 'build'
+              contents: '**/*'
+              targetFolder: '$(Build.ArtifactStagingDirectory)'
+              cleanTargetFolder: true
+
+          - task: ArchiveFiles@2
+            inputs:
+              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+              includeRootFolder: false
+              replaceExistingArchive: true
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Artifact: drop'
+            inputs:
+              pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
