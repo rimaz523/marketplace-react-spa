@@ -9,20 +9,22 @@ This is the frontend of a one-stop online marketplace site created with react js
 - ReactJS ^18.2.0
 - Yarn v3.3.1
 - Node v18.13.0 LTS
+- CI/CD using Azure DevOps
 
 ## Installation Instructions
 
 - Clone the project locally
 - Install dependencies
-    - `yarn install`
+  - `yarn install`
 - Start the application
-    - `yarn start`
+  - `yarn start`
 
 ## Configuring VSCode
 
 - Install the most recent version of VSCode
 
 ## Project Wiki :
+
 - [General](https://dev.azure.com/rimazmohommed523/Marketplace/_wiki/wikis/Marketplace.wiki/18/Frontend-React-JS-Single-Page-Application)
 - [Architectural Decisions](https://dev.azure.com/rimazmohommed523/Marketplace/_wiki/wikis/Marketplace.wiki/27/Architectural-Decisions)
 - [Known Issues](https://dev.azure.com/rimazmohommed523/Marketplace/_wiki/wikis/Marketplace.wiki/26/Issues)
