@@ -68,4 +68,3 @@ stages:
                     appType: 'webAppLinux'
                     package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
                     deploymentMethod: 'zipDeploy'
-                    startUpCommand: 'pm2 serve /home/site/wwwroot --spa --no-daemon'
