@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/rimazmohommed523/Marketplace/_apis/build/status%2Frimaz523.marketplace-react-spa?branchName=refs%2Fpull%2F3%2Fmerge)](https://dev.azure.com/rimazmohommed523/Marketplace/_build/latest?definitionId=14&branchName=refs%2Fpull%2F3%2Fmerge)
+
 # Online Marketplace Platform Frontend React SPA
 
 ## Description
